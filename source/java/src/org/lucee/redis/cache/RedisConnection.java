@@ -37,6 +37,7 @@ public class RedisConnection {
 
             JedisPoolConfig config = new JedisPoolConfig();
             config.setTestOnBorrow(true);
+            config.setMaxActive(128);
             
             instance.put(cacheName, new JedisPool(config, host, port));
 
